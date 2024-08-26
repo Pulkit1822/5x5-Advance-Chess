@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21BCE11602</title>
+    <link rel="icon" type="image" href="/Client/sounds/profile_pic.png" /> <!-- My profile pic as favicon -->
+    <link href="https://fonts.googleapis.com/css2?family=Gotham:wght@400;700&display=swap" rel="stylesheet"> <!-- Gotham font for that cool look -->
+    <link href="style.css" rel="stylesheet"> <!-- My custom styles for the page -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
+</head>
+<body>
+    <div id="header">
+        <h1 id="dynamic-title">5X5 Advanced Chess ♟️</h1> <!-- Title of my awesome chess game -->
+        <div id="scores">
+            <div class="score-box">
+                <i class="fas fa-trophy"></i> <!-- Trophy icon for the score section -->
+                <div class="score-details">
+                    <div id="player-a-score">Player A: <span>0</span></div> <!-- Score for Player A -->
+                    <div id="player-b-score">Player B: <span>0</span></div> <!-- Score for Player B -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <button id="toggle-rules">Show Rules</button> <!-- Button to toggle game rules -->
+    <div id="current-turn">Current Turn: Player A</div> <!-- Showing which player's turn it is -->
+    <div id="timer">Time Left: 30s</div> <!-- Timer to show time left -->
+    <div id="game-board"></div> <!-- Game board where the action happens -->
+    <script>
+        // Function to get a random color for changing the title color
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Changing the title color every 100 milliseconds
+        function changeTitleColor() {
+            const title = document.getElementById('dynamic-title');
+            title.style.color = getRandomColor(); // Setting a random color
+        }
+
+        setInterval(changeTitleColor, 100); // Calling the color change function every 100ms
+    </script>
+    <div id="rules">
+        <h2>Piece Movement Guide</h2>
+        <ul>
+            <li><strong>Pawn (P):</strong> Moves 1 step in any direction (⬆️ ⬇️ ⬅️ ➡️)</li>
+            <li><strong>Hero1 (H1):</strong> Moves 2 steps in any direction (⬆️ ⬇️ ⬅️ ➡️)</li>
+            <li><strong>Hero2 (H2):</strong> Moves 2 steps diagonally (↖️ ↗️ ↙️ ↘️)</li>
+        </ul>
+    </div>
+    <div id="controls">
+        <div id="player-a-controls">
+            <div class="move-buttons">
+                <!-- Buttons for Player A's moves -->
+                <button class="move-btn" data-move="P1:F">P1 Forward</button>
+                <button class="move-btn" data-move="P1:B">P1 Backward</button>
+                <button class="move-btn" data-move="P1:L">P1 Left</button>
+                <button class="move-btn" data-move="P1:R">P1 Right</button>
+                <button class="move-btn" data-move="P2:F">P2 Forward</button>
+                <button class="move-btn" data-move="P2:B">P2 Backward</button>
+                <button class="move-btn" data-move="P2:L">P2 Left</button>
+                <button class="move-btn" data-move="P2:R">P2 Right</button>
+                <button class="move-btn" data-move="P3:F">P3 Forward</button>
+                <button class="move-btn" data-move="P3:B">P3 Backward</button>
+                <button class="move-btn" data-move="P3:L">P3 Left</button>
+                <button class="move-btn" data-move="P3:R">P3 Right</button>
+                <button class="move-btn" data-move="H1:F">H1 Forward</button>
+                <button class="move-btn" data-move="H1:B">H1 Backward</button>
+                <button class="move-btn" data-move="H1:L">H1 Left</button>
+                <button class="move-btn" data-move="H1:R">H1 Right</button>
+                <button class="move-btn" data-move="H2:F">H2 Forward</button>
+                <button class="move-btn" data-move="H2:B">H2 Backward</button>
+                <button class="move-btn" data-move="H2:L">H2 Left</button>
+                <button class="move-btn" data-move="H2:R">H2 Right</button>
+            </div>
+        </div>
+        <div id="player-b-controls" style="display: none;">
+            <div class="move-buttons">
+                <!-- Buttons for Player B's moves -->
+                <button class="move-btn" data-move="P1:F">P1 Forward</button>
+                <button class="move-btn" data-move="P1:B">P1 Backward</button>
+                <button class="move-btn" data-move="P1:L">P1 Left</button>
+                <button class="move-btn" data-move="P1:R">P1 Right</button>
+                <button class="move-btn" data-move="P2:F">P2 Forward</button>
+                <button class="move-btn" data-move="P2:B">P2 Backward</button>
+                <button class="move-btn" data-move="P2:L">P2 Left</button>
+                <button class="move-btn" data-move="P2:R">P2 Right</button>
+                <button class="move-btn" data-move="P3:F">P3 Forward</button>
+                <button class="move-btn" data-move="P3:B">P3 Backward</button>
+                <button class="move-btn" data-move="P3:L">P3 Left</button>
+                <button class="move-btn" data-move="P3:R">P3 Right</button>
+                <button class="move-btn" data-move="H1:F">H1 Forward</button>
+                <button class="move-btn" data-move="H1:B">H1 Backward</button>
+                <button class="move-btn" data-move="H1:L">H1 Left</button>
+                <button class="move-btn" data-move="H1:R">H1 Right</button>
+                <button class="move-btn" data-move="H2:F">H2 Forward</button>
+                <button class="move-btn" data-move="H2:B">H2 Backward</button>
+                <button class="move-btn" data-move="H2:L">H2 Left</button>
+                <button class="move-btn" data-move="H2:R">H2 Right</button>
+            </div>
+        </div>
+    </div>
+    <div id="timer-container">
+        <div id="timer-capsule"></div> <!-- Timer capsule for a cool visual effect -->
+    </div>
+    
+    <div id="game-status"></div> <!-- Status updates for the game -->
+    <div id="move-history">
+        <h2>Move History</h2> <!-- History of moves made -->
+    </div>
+    <footer id="footer">
+        <div class="footer-container">
+            <p>Made with ❤️ by Pulkit</p> <!-- Footer with my name and love -->
+            <p>Registration Number: 21BCE11602</p> <!-- Just to remember my reg number, so nobody copies it 😂 -->
+        </div>
+    </footer>
+    <script src="app.js"></script> <!-- My script for game logic -->
+    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="pulkitkumarmathur" data-description="" data-message="Love the game? Buy me a coffee ☕️"  data-color="#ff9796" data-position="Right" data-x_margin="18" data-y_margin="18" ></script> <!-- Coffee donation widget -->
+</body>
+</html>

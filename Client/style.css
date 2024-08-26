@@ -1,0 +1,291 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Using Comic Sans for a fun vibe */
+    background-color: #f0f8ff; /* Light blue background to keep things calm */
+    color: #333333; /* Dark grey text for readability */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between; /* Space between elements in the header */
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box; /* To include padding in the width calculation */
+    background-color: #ffeb3b; /* Bright yellow background for the header */
+    border-bottom: 2px solid #000; /* Black bottom border */
+    border-top: 2px solid #000; /* Black top border */
+}
+
+h1 {
+    margin: 0;
+    font-size: 36px;
+    color: #fc4c2c; /* Red color for the title to make it pop */
+}
+
+#scores {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align scores to the right */
+}
+
+.score-box {
+    border: 2px solid #000; /* Black border for the score box */
+    display: flex;
+    align-items: center;
+    background-color: #ff9796; /* Light red background for score box */
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 5px;
+    animation: flash 0.5s ease-in-out; /* Flash animation for the score box */
+}
+
+.score-box i {
+    font-size: 24px; /* Icon size */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.score-details {
+    display: flex;
+    flex-direction: column;
+}
+
+#player-a-score, #player-b-score {
+    font-size: 18px;
+    font-weight: bold; /* Bold font for scores */
+}
+
+#current-turn {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#timer {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(5, 50px); /* 5 columns of 50px each */
+    grid-template-rows: repeat(5, 50px); /* 5 rows of 50px each */
+    gap: 5px; /* Space between grid cells */
+    margin: 20px 0;
+    background-color: #f0f0f0; /* Light grey background for the game board */
+    border: 2px solid #000; /* Black border around the game board */
+    padding: 10px;
+    border-radius: 10px; /* Rounded corners for the game board */
+}
+
+.grid-cell {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000; /* Black border for each grid cell */
+    background-color: #fff; /* White background for cells */
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px; /* Rounded corners for cells */
+    transition: transform 0.2s; /* Smooth scaling effect on hover */
+}
+
+.grid-cell:hover {
+    transform: scale(1.1); /* Scale up the cell a bit on hover */
+}
+
+.player-a {
+    background-color: lightblue; /* Light blue for Player A */
+}
+
+.player-b {
+    background-color: lightcoral; /* Light coral for Player B */
+}
+
+#controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.move-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 100px); /* 4 columns for move buttons */
+    grid-gap: 10px; /* Space between buttons */
+    margin-bottom: 20px;
+}
+
+.move-btn {
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #ffeb3b; /* Yellow background for buttons */
+    border: 2px solid #000; /* Black border */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition effects */
+}
+
+.move-btn:hover {
+    background-color: #ffc107; /* Darker yellow on hover */
+    transform: scale(1.1); /* Scale up button a bit on hover */
+}
+
+#game-status {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#move-history {
+    width: 300px;
+    height: 200px;
+    overflow-y: auto; /* Scrollable if content overflows */
+    border: 2px solid #000; /* Black border for history box */
+    padding: 10px;
+    box-sizing: border-box; /* Include padding in width and height */
+    text-align: left;
+    background-color: #fff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4caf50; /* Green background for buttons */
+    color: black; /* Black text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition effects */
+    margin: 5px; /* Space around buttons */
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.1); /* Scale up button a bit on hover */
+}
+
+@keyframes flash {
+    0% { background-color: #ffcccb; } /* Start with light red */
+    50% { background-color: #ffeb3b; } /* Flash to yellow */
+    100% { background-color: #ffcccb; } /* Back to light red */
+}
+
+#timer {
+    width: 10%; /* Timer width */
+    border-radius: 20%; /* Rounded corners for the timer */
+    height: 10px; /* Timer height */
+    background-color: lightgray; /* Light grey background for timer */
+    position: relative;
+    overflow: hidden; /* Hide overflow content */
+}
+
+#timer-bar {
+    width: 100%; /* Full width initially */
+    height: 100%; /* Full height */
+    background-color: green; /* Green color for the bar */
+    position: absolute;
+    top: 0;
+    border-radius: 20%; /* Rounded corners for the bar */
+    left: 0;
+    animation: countdown 15s linear infinite; /* Animation for countdown */
+}
+
+@keyframes countdown {
+    0% {
+        width: 100%;
+        background-color: green; /* Start with green */
+    }
+    50% {
+        width: 50%; /* Halfway point */
+        background-color: yellow; /* Change to yellow */
+    }
+    100% {
+        width: 0; /* End with no width */
+        background-color: red; /* Change to red */
+    }
+}
+
+#rules {
+    display: none; /* Initially hide the rules */
+    width: 35%; /* Width of rules box */
+    padding: 20px;
+    background-color: #fff; /* White background for rules */
+    border: 2px solid black; /* Black border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    margin-left: 20px; /* Space between the rules and the game board */
+}
+
+#rules h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#rules ul {
+    list-style-type: none; /* Remove bullet points from the list */
+    padding: 0;
+}
+
+#rules li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#rules li strong {
+    color: #333; /* Dark grey for strong text */
+}
+
+#toggle-rules {
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Same fun font as the body */
+    margin-top: 10px;
+    margin-left: 89%; /* Position button to the right */
+    align-items: right;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold; /* Bold text for button */
+    cursor: pointer;
+    background-color: #ffcccb; /* Light red background for the button */
+    color: black; /* Black text color */
+    border: 2px solid black; /* Black border */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+#toggle-rules:hover {
+    background-color: #f9abaa; /* Darker red on hover */
+}
+
+#toggle-rules:hover + #rules,
+#rules:hover {
+    display: block; /* Show rules when button is hovered or rules are hovered */
+}
+
+#footer {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between; /* Space between footer items */
+    align-items: center;
+    width: 100%;
+    padding: 10px 10px;
+    box-sizing: border-box; /* Include padding in width calculation */
+    border-top: 2px solid #000; /* Black top border */
+    background-color: #ffeb3b; /* Yellow background for footer */
+    border-bottom: 2px solid #000; /* Black bottom border */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center; /* Center-align the content */
+}
+
+#BMC-Widget {
+    border-color: #000000 !important; /* Ensure black border for BMC widget */
+}
