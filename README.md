@@ -30,7 +30,7 @@ This project is a turn-based chess-like game implemented with a server-client ar
 
 ### Screenshots
 
-![Game Board](path/to/screenshot1.png)
+![Entry](https://github.com/Pulkit1822/Pulkit-Kumar-Mathur-21BCE11602/blob/main/Client/workflow/input1.png)
 *Description: The main game board showing the 5x5 grid and player pieces.*
 
 ![Move History](path/to/screenshot2.png)
