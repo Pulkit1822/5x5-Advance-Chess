@@ -31,12 +31,24 @@ This project is a turn-based chess-like game implemented with a server-client ar
 ### Screenshots
 
 ![Entry](https://github.com/Pulkit1822/Pulkit-Kumar-Mathur-21BCE11602/blob/main/Client/workflow/input1.png)
-*Description: The main game board showing the 5x5 grid and player pieces.*
+*Description: The Game asking for the player names.*
 
-![Move History](path/to/screenshot2.png)
+![Entry](https://github.com/Pulkit1822/Pulkit-Kumar-Mathur-21BCE11602/blob/main/Client/workflow/input2.png)
+*Description: The Game asking for the player names.*
+
+![UI](https://github.com/Pulkit1822/Pulkit-Kumar-Mathur-21BCE11602/blob/main/Client/workflow/ui.png)
+*Description: This shows how a simple UI is implemented*
+
+![Guide](https://github.com/Pulkit1822/Pulkit-Kumar-Mathur-21BCE11602/blob/main/Client/workflow/guide.png)
+*Description: This shows the rules of the game*
+
+![Handling Edge Cases](https://github.com/Pulkit1822/Pulkit-Kumar-Mathur-21BCE11602/blob/main/Client/workflow/edge.png)
+*Description: This shows the perfect implementation of handling edge cases*
+
+![Move History](https://github.com/Pulkit1822/Pulkit-Kumar-Mathur-21BCE11602/blob/main/Client/workflow/replay.png)
 *Description: The move history log showing all moves made during the game.*
 
-![Game Over](path/to/screenshot3.png)
+![Game Over](https://github.com/Pulkit1822/Pulkit-Kumar-Mathur-21BCE11602/blob/main/Client/workflow/won.png)
 *Description: The game over screen showing the winner and options to start a new game.*
 
 
