@@ -1,4 +1,12 @@
-# 5x5 Advanced Chess Game
+<p align="center">
+  <a href="https://github.com/Pulkit1822/5x5-Advance-Chess">
+    <img src="https://github.com/Pulkit1822/5x5-Advance-Chess/blob/main/content/logo.jpeg" height="128">
+  </a>
+</p>
+
+<h1 align="center">5x5 Advanced Chess</h1>
+
+
 
 Welcome to the 5x5 Advanced Chess Game! This project is a turn-based, chess-like game with a server-client architecture, utilizing WebSockets for real-time communication and a web-based user interface. The game is designed to be both fun and visually appealing, with several bonus challenges and features to enhance the user experience.
 
