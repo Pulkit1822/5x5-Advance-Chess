@@ -1,5 +1,6 @@
 # 5x5 Advanced Chess Game Client Side
 
+
 Welcome to the 5x5 Advanced Chess Game! This project is a turn-based, chess-like game with a server-client architecture, utilizing WebSockets for real-time communication and a web-based user interface. The game is designed to be both fun and visually appealing, with several bonus challenges and features to enhance the user experience.
 
 ## Table of Contents
@@ -10,6 +11,7 @@ Welcome to the 5x5 Advanced Chess Game! This project is a turn-based, chess-like
 - [Game Rules](#game-rules)
 - [Technical Requirements](#technical-requirements)
 - [Bonus Challenges](#bonus-challenges)
+- [Prerequisites](#prerequisites)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 
@@ -31,27 +33,27 @@ To get started with the project, follow these steps:
 
 1. **Clone the repository:**
 
-   ```bash
-   git clone https://github.com/Pulkit1822/Pulkit-Kumar-Mathur-21BCE11602.git
-   ```
+  ```bash
+  git clone https://github.com/Pulkit1822/Pulkit-Kumar-Mathur-21BCE11602.git
+  ```
 
 2. **Install dependencies:**
 
-   ```markdown
-   npm install
-   ```
+  ```bash
+  npm install
+  ```
 
 3. **Start the server:**
 
-   ```markdown
-   node server/server.js
-   ```
+  ```bash
+  node server/server.js
+  ```
 
 4. **Open the game in your browser:**
 
-   ```
-   http://localhost:8080
-   ```
+  ```plaintext
+  http://localhost:8080
+  ```
 
 ## Usage
 
@@ -91,10 +93,10 @@ To get started with the project, follow these steps:
   - For Hero1 and Hero2, any opponent's character in their path is removed, not just the final destination.
 - **Invalid Moves**:
   - Moves are considered invalid if:
-    - The specified character doesn't exist.
-    - The move would take the character out of bounds.
-    - The move is not valid for the given character type.
-    - The move targets a friendly character.
+   - The specified character doesn't exist.
+   - The move would take the character out of bounds.
+   - The move is not valid for the given character type.
+   - The move targets a friendly character.
   - Players must retry their turn if they input an invalid move.
 - **Game State Display**:
   - After each turn, the 5x5 grid is displayed with all character positions.
@@ -145,19 +147,15 @@ To get started with the project, follow these steps:
 
 ## Bonus Challenges
 
+1. **Replay System**: Implement a replay system that allows players to review past games move by move. The replay system provides a detailed history of each move, including the move itself, the player who made the move, and the timestamp of the move. Players can easily navigate through the replay and analyze the game to improve their strategies. The replay system is accessible through the "Move History" page in the application.
 
-1. **Replay System**: I have implemented a replay system that allows players to review past games move by move. The replay system provides a detailed history of each move, including the move itself, the player who made the move, and the timestamp of the move. Players can easily navigate through the replay and analyze the game to improve their strategies. The replay system is accessible through the "Move History" page in the application.
+2. **Ranking System**: Add a ranking system that tracks player performance across multiple games. The ranking system assigns a score to each player based on their performance in each game. The score is calculated by considering factors such as the number of wins, the number of pins held by a player, and the overall gameplay performance. The ranking system provides a fair and competitive environment for players to strive for the top position on the leaderboard.
 
-2. **Ranking System**: I have added a ranking system that tracks player performance across multiple games. The ranking system assigns a score to each player based on their performance in each game. The score is calculated by considering factors such as the number of wins, the number of pins held by a player, and the overall gameplay performance. The ranking system provides a fair and competitive environment for players to strive for the top position on the leaderboard.
+## Prerequisites
 
-
-### Prerequisites
-
-* Node.js (v14 or higher)
-* npm (v6 or higher)
-* A modern web browser (Chrome, Firefox, Safari, etc.)
-
-
+- Node.js (v14 or higher)
+- npm (v6 or higher)
+- A modern web browser (Chrome, Firefox, Safari, etc.)
 
 ## License
 
