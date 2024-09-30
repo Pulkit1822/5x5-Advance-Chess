@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/Pulkit1822/5x5-Advance-Chess">
-    <img src="https://github.com/Pulkit1822/5x5-Advance-Chess/blob/main/content/logo.jpeg" height="128">
+    <img src="https://github.com/Pulkit1822/5x5-Advance-Chess/blob/main/content/logo.jpg" height="128">
   </a>
 </p>
 
